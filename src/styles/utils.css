@@ -1,0 +1,22 @@
+
+/* Backgrounds */
+.bg-primary {
+  background: var(--bg-primary);
+}
+.bg-secondary {
+  background: var(--bg-secondary);
+}
+.bg-body {
+  background: var(--bg-body);
+}
+
+/* Text colors */
+.text-primary {
+  color: var(--text-primary);
+}
+.text-secondary {
+  color: var(--text-secondary);
+}
+.text-body {
+  color: var(--text-body);
+}
