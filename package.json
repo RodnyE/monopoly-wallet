@@ -1,13 +1,13 @@
 {
   "name": "monopoly-wallet",
-  "version": "0.0.1",
+  "version": "0.0.5",
   "main": "./src/index.js",
   "private": true,
   "scripts": {
     "start": "npx webpack serve --node-env=development",
-    "droid": "bash .sh/droid.sh",
     "build": "npx webpack build --mode=production --node-env=production",
-    "build_dev": "npx webpack build --mode=development --node-env=development"
+    "build:dev": "npx webpack build --mode=development --node-env=development",
+    "build:droid": "bash .sh/droid.sh"
   },
   "dependencies": {
     "@babel/core": "^7.22.1",

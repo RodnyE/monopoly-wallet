@@ -9,7 +9,7 @@ To get started with Monopoly-Wallet, follow these steps:
 1. **Clone the repository:**
 
 ```
-git clone https://github.com/your-username/monopoly-wallet.git
+git clone https://github.com/RodnyE/monopoly-wallet.git
 ```
 
 2. **Navigate to the project directory:**
