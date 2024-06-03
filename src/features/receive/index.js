@@ -4,6 +4,7 @@ import { useLocation } from 'wouter'
 import { useProfileStore } from '@/stores'
 import { transactionCategories } from '@/utils/transaction'
 
+import { SiCashapp } from 'react-icons/si'
 import { Navbar, Button, QRScanner } from '@/ui'
 
 function ReceivePage() {
@@ -26,8 +27,8 @@ function ReceivePage() {
   /**
    * 
    */
-  const handleScanner = (text, result) => {
-    let [type, targetName, amount, _limit] = text.split(',');
+  const handleScanner = ([{ rawValue }]) => {
+    let [type, targetName, amount, _limit] = rawValue.split(',');
     
     if (_limit || !type || !targetName || !amount) return alert('Este QR no es valido');
     setTransaction({
@@ -50,15 +51,18 @@ function ReceivePage() {
           </div>
           
           <QRScanner
-            onResult={handleScanner}
+            onScan={handleScanner}
           />
         </div>
       }
       {transaction &&
-        <div className='pt-4 flex flex-col items-center'>
-          <p> Enhorabuena! </p>
+        <div className='pt-4 text-xl flex flex-col items-center'>
+          <div className='m-2'>
+            <Button bg={category.bg} onClick={() => navigate('/wallet')}> Atrás </Button>
+          </div>
+          <p className='m-3 font-bold'> Enhorabuena! </p>
           <p> De {transaction.targetName} acabas de recibir: </p>
-          <div className='flex items-center text-xl'> 
+          <div className='space-x-2 text-green-700 flex items-center text-4xl'> 
             <SiCashapp/>
             <p> {transaction.amount} </p>
           </div> 

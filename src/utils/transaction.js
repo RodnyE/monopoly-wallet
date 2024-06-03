@@ -16,6 +16,7 @@ export const transactionCategories = {
     name: 'Recibir',
     bg: 'bg-green-600',
     color: 'text-green-600',
+    actionText: 'Recibiste',
     Icon: GiReceiveMoney,
     location: '/wallet/receive',
   },

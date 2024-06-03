@@ -5,6 +5,7 @@
   "private": true,
   "scripts": {
     "start": "npx webpack serve --node-env=development",
+    "droid": "bash .sh/droid.sh",
     "build": "npx webpack build --mode=production --node-env=production",
     "build_dev": "npx webpack build --mode=development --node-env=development"
   },

@@ -13,10 +13,10 @@ export const QRCode = ({className, value}) => {
   )
 }
 
-export const QRScanner = ({onResult}) => {
+export const QRScanner = ({onScan}) => {
   return (
     <div className='p-2 rounded-xl bg-current w-64'>
-      <QRScannerLib onResult={onResult}/>
+      <QRScannerLib onScan={onScan}/>
     </div>
   )
 }

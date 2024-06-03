@@ -1,11 +1,7 @@
 
-const { 
-  DIR,
-  PORT,  
-  CLIENT_DIR, 
-} = require('./config.js');
-const path = require('path');
+const { DIR, PORT, CLIENT_DIR } = require('./config.js'); 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const dev = process.env.NODE_ENV === 'development';
  
 module.exports = {
   // main file
@@ -16,7 +12,7 @@ module.exports = {
   output: {
     path: CLIENT_DIR,
     filename: 'bundle.js',
-    publicPath: '/',
+    publicPath: dev ? '/' : '',
   },
 
   // if start a dev server
@@ -43,9 +39,8 @@ module.exports = {
       '@': DIR + '/src',
       
       // for program in mobile :')
-      'eruda': process.env.NODE_ENV === 'production' ?
-        DIR + '/src/utils/__eruda-fake.js': // remove eruda in production
-        'eruda',
+      'eruda':
+        dev ? 'eruda' : DIR + '/src/utils/__eruda-fake.js',
     },
     extensions: ['.*', '.js', '.jsx']
   },
